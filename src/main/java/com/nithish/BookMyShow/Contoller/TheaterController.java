@@ -6,6 +6,7 @@ import com.nithish.BookMyShow.Services.TheaterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,6 +23,7 @@ public class TheaterController {
     }
 
     @PutMapping("associateSeats")
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
     public ResponseEntity associateSeats(@RequestBody AddTheatreSeatsRequest theatreSeatsRequest){
         String res = this.theaterService.associateSeats(theatreSeatsRequest);
         return new ResponseEntity(res, HttpStatus.OK);

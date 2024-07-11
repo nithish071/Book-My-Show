@@ -7,6 +7,7 @@ import com.nithish.BookMyShow.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +18,7 @@ public class MovieController {
     private MovieService movieService;
 
     @PostMapping("addMovie")
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
     public ResponseEntity addNewMovie(@RequestBody AddMovieRequest movie){
         String result = this.movieService.addNewMovie(movie);
         return new ResponseEntity(result, HttpStatus.OK);

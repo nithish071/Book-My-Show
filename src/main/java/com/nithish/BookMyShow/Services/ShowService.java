@@ -37,7 +37,7 @@ public class ShowService {
             return "Theater Not Found";
         }
         Show show = Show.builder().showDate(showRequest
-                .getShowDate())
+                        .getShowDate())
                 .showTime(showRequest.getShowTime())
                 .movie(movie)
                 .theater(theater)
