@@ -14,4 +14,5 @@ import java.util.List;
 public interface ShowRepo extends JpaRepository<Show,Integer> {
     Show findByMovieAndShowDateAndShowTimeAndTheater(Movie movie,LocalDate showDate,LocalTime showTime,Theater theater);
     List<Show> findByCityAndShowDate(City city, LocalDate showDate);
+    List<Show> findByCityAndMovieAndShowDate(City city,Movie movie,LocalDate date);
 }
