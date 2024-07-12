@@ -22,7 +22,7 @@ public class TheaterService {
     private TheaterSeatRepo theaterSeatRepo;
 
     public String addTheater(AddTheaterRequest theaterRequest){
-        Theater theater = Theater.builder().noOfScreens(theaterRequest.getNoOfScreens()).theaterName(theaterRequest.getName())
+        Theater theater = Theater.builder().theaterName(theaterRequest.getName())
                 .address(theaterRequest.getAddress()).build();
         theater = this.theaterRepo.save(theater);
         return "The theater has been saved to the DB with theaterId: "+theater.getTheaterId();

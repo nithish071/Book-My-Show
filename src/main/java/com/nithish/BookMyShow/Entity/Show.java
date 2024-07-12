@@ -1,5 +1,6 @@
 package com.nithish.BookMyShow.Entity;
 
+import com.nithish.BookMyShow.Enum.City;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,9 @@ public class Show {
 
     private LocalDate showDate;
     private LocalTime showTime;
+
+    @Enumerated(value = EnumType.STRING)
+    private City city;
 
     @JoinColumn
     @ManyToOne

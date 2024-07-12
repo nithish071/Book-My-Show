@@ -66,6 +66,7 @@ public class UserService {
         if(user.getRoles().contains(role)){
             return "User Already has admin access";
         }
+        user.getRoles().clear();
         user.getRoles().add(role);
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(emailID);

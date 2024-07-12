@@ -1,5 +1,6 @@
 package com.nithish.BookMyShow.Entity;
 
+import com.nithish.BookMyShow.Enum.Genre;
 import com.nithish.BookMyShow.Enum.Language;
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,5 +31,7 @@ public class Movie {
     private Double duration;
 
     private Double ratings;
-    
+
+    @Enumerated(value = EnumType.STRING)
+    private Genre genre;
 }

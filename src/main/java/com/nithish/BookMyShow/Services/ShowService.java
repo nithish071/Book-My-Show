@@ -41,6 +41,7 @@ public class ShowService {
                 .showTime(showRequest.getShowTime())
                 .movie(movie)
                 .theater(theater)
+                .city(showRequest.getCity())
                 .build();
         this.showRepo.save(show);
         // Associate corresponding showSeats

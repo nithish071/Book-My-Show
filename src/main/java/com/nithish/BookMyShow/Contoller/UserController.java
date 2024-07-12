@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("grant-admin-permission")
+    @PutMapping("grant-admin-permission")
     @PreAuthorize("hasRole('SUPER_ADMIN')")
     public String createAdministrator(@RequestParam("email") String emailID) {
         String createdAdmin = userService.createAdmin(emailID);

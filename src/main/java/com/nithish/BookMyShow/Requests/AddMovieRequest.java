@@ -1,5 +1,6 @@
 package com.nithish.BookMyShow.Requests;
 
+import com.nithish.BookMyShow.Enum.Genre;
 import com.nithish.BookMyShow.Enum.Language;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,5 +15,6 @@ public class AddMovieRequest {
     private LocalDate releaseDate;
     private Language language;
     private Double duration;
+    private Genre genre;
     private Double ratings;
 }
